@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Almarai:wght@400;700&family=Barlow+Semi+Condensed:wght@500;600&display=swap');
-*{
+*{  
+    box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
@@ -13,112 +14,113 @@ body{
 /* utilities */
 .container{
     display:grid;
-    row-gap: 30px;
-    column-gap: 50px;
-    grid-template-columns:auto;
-    grid-template-rows: auto;
+    height: 110vh;
+    grid-template-columns: repeat(autofill, minmax(300px, 1fr));
+    grid-template-areas: 
+        "daniel daniel daniel jonathan kira"
+        "jeanette patrick patrick patrick kira";
+    gap: 20px
+    
     }
-.daniel{
-    background-color: hsl(263, 55%, 52%);
-    grid-row-start: 1;
-    grid-row-end: 2;
-    grid-column-start: 1;
-    grid-column-end: 4;
-    background-image: url(../img/bg-pattern-quotation.svg);
-    background-repeat: no-repeat;
-    background-position:350px top;
-    background-size: 125px;
-}
-.jonathan{
-    background-color: hsl(217, 19%, 35%);
-    grid-row-start: 1;
-    grid-row-end: 2;
-    grid-column-start: 4;
-    grid-column-end: 5;
-}
-.jeanette{
-    background-color: #fff;
-    grid-row-start: 2;
-    grid-row-end: 3;
-    grid-column-start: 1;
-    grid-column-end: 2;
-}
-.patrick{
-    background-color:hsl(219, 29%, 14%);
-    grid-row-start: 2;
-    grid-row-end: 3;
-    grid-column-start: 2;
-    grid-column-end: 5;
-}
-.patrick img{
-    border: 2px solid  hsl(263, 55%, 52%);
-}
-.kira{
-    background-color: #fff;
-    grid-row-start: 1;
-    grid-row-end: 3;
-    grid-column-start: 5;
-    grid-column-end: 6;
-}
-div{
-    border-radius: 10px;
-    padding: 20px;
-}
-img{
-    border-radius: 50%;
-    display: inline-block;
-}
-
-.name{
-    display: inline-block;
-    padding: 0 0 5px 15px;
-}
-h3{
-    color:hsl(210, 46%, 95%)
-}
-h4{
-    color:hsl(210, 46%, 95%);
-    opacity: 70%;
-}
-.p1{
-    font-size: 1.25rem;
-    padding: 10px;
-    color:hsl(210, 46%, 95%)
-}
-.p2{
-    font-size: 0.85rem;
-    padding: 10px;
-    color:hsl(210, 46%, 95%);
-    opacity:70%
-}
-.kira .p1{
-    color:hsl(0, 0%, 0%);
-}
-.kira .p2{
-    color:hsl(0, 0%, 0%);
-    opacity:70%;
-    font-size: 0.95rem;
-}
-.jeanette .p1{
-    color:hsl(0, 0%, 0%);
-}
-.jeanette .p2{
-    color:hsl(0, 0%, 0%);
-    opacity:70%
-}
-.kira h3{
-    color:hsl(0, 0%, 0%);
-}
-.kira h4{
-    color:hsl(0, 0%, 0%);
-    opacity:70%
-}
-.jeanette h3{
-    color:hsl(0, 0%, 0%);
-}
-.jeanette h4{
-    color:hsl(0, 0%, 0%);
-    opacity:70%
-}
+    @media (max-width:767px){
+        .container{
+            display: grid;
+            grid-template-columns: repeat(autofill, minmax(200px, auto));
+            grid-template-areas:
+                "daniel"
+                "jonathan"
+                "jeanette"
+                "patrick"
+                "kira";
+        }
+        body{
+            margin: 40px 40px;
+        }
+    }
+    .daniel{
+        grid-area: daniel;
+        background-color: hsl(263, 55%, 52%);
+        background-image: url(../img/bg-pattern-quotation.svg);
+        background-repeat: no-repeat;
+        background-size: 23%;
+        background-position: 70% top;
+    }
+    .jonathan{
+        grid-area: jonathan;
+        background-color: hsl(217, 19%, 35%);
+    }
+    .kira{
+        grid-area: kira;
+        background-color: #fff;
+    }
+    .jeanette{
+        grid-area: jeanette;
+        background-color: #fff;
+    }
+    .patrick{
+        grid-area: patrick;
+        background-color:hsl(219, 29%, 14%);
+    }
+    div{
+        border-radius: 10px;
+        padding: 15px;
+    }
+    img{
+        border-radius: 50%;
+        display: inline-block;
+    }
+    
+    .name{
+        display: inline-block;
+        padding: 0 0 5px 15px;
+    }
+    h3{
+        color:hsl(210, 46%, 95%)
+    }
+    h4{
+        color:hsl(210, 46%, 95%);
+        opacity: 70%;
+    }
+    .p1{
+        font-size: 1.4rem;
+        padding: 18px;
+        color:hsl(210, 46%, 95%)
+    }
+    .p2{
+        font-size: 1rem;
+        padding: 18px;
+        color:hsl(210, 46%, 95%);
+        opacity:70%
+    }
+    .kira .p1{
+        color:hsl(0, 0%, 0%);
+    }
+    .kira .p2{
+        color:hsl(0, 0%, 0%);
+        opacity:70%;
+        font-size: 1.1rem;
+    }
+    .jeanette .p1{
+        color:hsl(0, 0%, 0%);
+    }
+    .jeanette .p2{
+        color:hsl(0, 0%, 0%);
+        opacity:70%
+    }
+    .kira h3{
+        color:hsl(0, 0%, 0%);
+    }
+    .kira h4{
+        color:hsl(0, 0%, 0%);
+        opacity:70%
+    }
+    .jeanette h3{
+        color:hsl(0, 0%, 0%);
+    }
+    .jeanette h4{
+        color:hsl(0, 0%, 0%);
+        opacity:70%
+    }
 
 
+    
